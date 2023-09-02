@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: nextjsbasic 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nextjsbasic
+  template:
+    metadata:
+      labels:
+        app: nextjsbasic 
+    spec:
+      containers:
+        - name: nextjsbasic 
+          image: spreactregistry.azurecr.io/nextjsbasic
+          ports:
+          - containerPort: 80
